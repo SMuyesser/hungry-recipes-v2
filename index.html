@@ -16,7 +16,7 @@
       <img src="" alt="">
     </div>
 
-    <nav>
+    <nav class="hidden">
       <ul id="nav-items">
         <li id="nav-home">Home</li>
         <li id="nav-search-recipes">Search Recipes</li>
@@ -24,25 +24,19 @@
       </ul>
     </nav>
 
-    <div class="container">
-      <div id="search-recipes">
-        <img src="" alt="">
-        <p>Search for the recipe you're craving.</p>
-      </div>
-      <div id="ingredient-search">
-        <img src="" alt="">
-        <p>Find recipes using the ingredients you have.</p>
-      </div>
+    <div class="home-container">
+      <button id="recipe-search">Search for the recipe you're craving.</button>
+      <button id="ingredient-search">Find recipes using the ingredients you have.</button>
     </div>
 
-    <div class="title-searchbar">
+    <div id="title-searchbar" class="hidden">
       <form action="#" class="js-search-form">
         <input type="text" class="js-query">
         <button type="submit">Search</button>
       </form>
     </div>
 
-    <div class="js-search-results"></div>
+    <div class="js-search-results hidden"></div>
 
     <div style="display:none">
       <div class="js-result-template">

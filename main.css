@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+div.home-container {
+  width: 100%;
+}
+
+button#recipe-search,
+button#ingredient-search {
+  width: 100%;
+  height: 50px;
+  display: block;
+  clear: both;
+  background-color: grey;
+  margin-bottom: 10px;
+  background-color: #3A67DB;
+}
+
+button#ingredient-search {
+  background-color: #DB3A3A;
+}
+
+
+
+/* .search-result-item {
+  display: inline-block;
+  margin: auto auto;
+}
+
+.search-result-item img {
+  margin: 5px;
+  border: 3px solid white;
+}
+
+.search-result-item img:hover {
+  box-shadow: 3px 3px 5px black;
+}  */
