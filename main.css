@@ -1,10 +1,88 @@
-* {
+/********************************************
+  GENERAL
+********************************************/
+
+html {
   box-sizing: border-box;
+  background-color: #DDAE71;
 }
 
 .hidden {
   display: none;
 }
+
+
+
+/********************************************
+  HEADER
+********************************************/
+
+div#header {
+  background-image: url('Header.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 0;
+  border-bottom: 2px solid #800A0A;
+  position: relative;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#header h1,
+#header h3{
+  text-align: center;
+  margin: 5px;
+  background-color: rgba(255, 255, 255, .7);
+  width: 180px;
+  padding: 5px;
+  color:#800A0A;
+  border: 1px solid #545353;
+}
+
+#header h3 {
+  width: 220px;
+}
+
+
+
+
+/********************************************
+  NAV
+********************************************/
+nav {
+  background: #510606; 
+  color: #F5B800;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 25px;
+  margin-bottom: 45px;
+}
+
+nav ul li{
+  display: inline-block;
+}
+
+nav ul li::after {
+  content: '   |   ';
+  color: #FFDB6E
+}
+
+nav ul li#nav-ingredient-search::after {
+  content: '';
+}
+
+
+
+/********************************************
+  HOME SCREEN
+********************************************/
 
 div.home-container {
   width: 100%;
@@ -24,6 +102,8 @@ button#ingredient-search {
 button#ingredient-search {
   background-color: #DB3A3A;
 }
+
+
 
 
 
