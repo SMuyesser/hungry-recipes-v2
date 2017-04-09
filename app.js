@@ -13,10 +13,30 @@ $('body').on('click', 'button#recipe-search', function(event) {
   $('div.js-seach-results').removeClass('hidden');
 });
 
+//show ingredient search page
+$('body').on('click', 'button#ingredient-search', function(event) {
+  $('.ingredient-list').removeClass('hidden');
+});
+
+//change button color on select
+
+  
+  $('div.ingredient-list').on('click', 'button', function(event) {
+    var selected = [];
+    var ingredientVal = $(this).val();
+    $(this).toggleClass('selected-button');
+    if ($(this).hasClass('selected-button')) {
+      selected += ingredientVal; 
+    } else {
+      selected -= ingredientVal;
+    }
+  });
 
 
 
+  
 
+//food2fork api
 function getSearchFromApi(searchTerm, callback) {
   var query = {
     key: '67da4d03f58c56d22ee2072df42106f9',
