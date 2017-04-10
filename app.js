@@ -1,5 +1,6 @@
 var RecipeRequest_URL = 'http://food2fork.com/api/get';
 var SearchRequest_URL = 'http://food2fork.com/api/search';
+var selected = []; 
 
 //show nav after leaving homescreen and remove homepage buttons
 $('body').on('click', 'button#recipe-search, button#ingredient-search', function(event) {
@@ -18,19 +19,26 @@ $('body').on('click', 'button#ingredient-search', function(event) {
   $('.ingredient-list').removeClass('hidden');
 });
 
-//change button color on select
-
-  
-  $('div.ingredient-list').on('click', 'button', function(event) {
-    var selected = [];
-    var ingredientVal = $(this).val();
-    $(this).toggleClass('selected-button');
-    if ($(this).hasClass('selected-button')) {
-      selected += ingredientVal; 
+//change button color and add item to array selected on click, remove and change color back if clicked again
+$('div.ingredient-list').on('click', 'button', function(event) { 
+  var ingredientVal = $(this).val();
+  if (!$(this).hasClass('selected-button')) {
+    $(this).addClass('selected-button');
+    console.log(ingredientVal);
+    if (ingredientVal=="NaN") {
+      return selected;
     } else {
-      selected -= ingredientVal;
+      selected.push(ingredientVal); 
     }
-  });
+  } else {
+    $(this).removeClass('selected-button');
+    console.log(ingredientVal);
+    var removeItemIndex = selected.indexOf(ingredientVal);
+    console.log(removeItemIndex);
+    selected.splice(removeItemIndex, 1); 
+  }
+  return selected;
+});
 
 
 
