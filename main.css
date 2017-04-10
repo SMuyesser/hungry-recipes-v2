@@ -4,7 +4,7 @@
 
 html {
   box-sizing: border-box;
-  background-color: #DDAE71;
+  background-color: white;
 }
 
 .hidden {
@@ -18,7 +18,7 @@ html {
 ********************************************/
 
 div#header {
-  background-image: url('Header.jpg');
+  background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
