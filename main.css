@@ -81,7 +81,7 @@ nav ul li::after {
   color: #FFDB6E
 }
 
-nav ul li#nav-ingredient-search::after {
+nav ul li button#nav-ingredient-search::after {
   content: '';
 }
 
