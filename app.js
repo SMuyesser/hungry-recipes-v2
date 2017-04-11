@@ -1,5 +1,5 @@
-var RecipeRequest_URL = 'http://food2fork.com/api/get';
-var SearchRequest_URL = 'http://food2fork.com/api/search';
+var RecipeRequest_URL = 'https://food2fork-api-proxy.glitch.me/get';
+var SearchRequest_URL = 'https://food2fork-api-proxy.glitch.me/search';
 
 //array to hold selected ingredients
 var selected = []; 
@@ -85,7 +85,6 @@ $('body').on('click', 'button#confirm-ingredients', function getSearchFromApi(se
   $('div#change-ingredients').removeClass('hidden');
   var searchTerm = selected.toString();
   var query = {
-    key: '67da4d03f58c56d22ee2072df42106f9',
     q: searchTerm,
   }
   $.getJSON(SearchRequest_URL, query, callback);
@@ -105,7 +104,6 @@ $('body').on('click', 'button#change-ingredient-btn', function(event) {
 //food2fork recipe search api
 function getSearchFromApi(searchTerm, callback) {
   var query = {
-    key: '67da4d03f58c56d22ee2072df42106f9',
     q: searchTerm,
   }
   $.getJSON(SearchRequest_URL, query, callback);
