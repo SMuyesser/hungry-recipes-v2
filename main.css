@@ -4,7 +4,8 @@
 
 html {
   box-sizing: border-box;
-  background-color: white;
+  background-color: #ECBA59;
+
 }
 
 .hidden {
@@ -18,7 +19,7 @@ html {
 ********************************************/
 
 div#header {
-  background-color: white;
+  background-image: url(Header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -54,6 +55,7 @@ div#header {
 /********************************************
   NAV
 ********************************************/
+
 nav {
   background: #510606; 
   color: #F5B800;
@@ -82,6 +84,7 @@ nav ul li::after {
 nav ul li#nav-ingredient-search::after {
   content: '';
 }
+
 
 
 
