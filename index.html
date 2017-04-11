@@ -24,17 +24,19 @@
 
     <div class="home-container">
       <button id="recipe-search">Search for the recipe you're craving.</button>
-      <button id="ingredient-search">Find recipes using the ingredients you have.</button>
+      <button id="ingredient-search">Find recipes using the ingredients you choose.</button>
     </div>
 
     <div id="title-searchbar" class="hidden">
       <form action="#" class="js-search-form">
+        <p>Find a recipe for:</p>
         <input type="text" class="js-query">
         <button type="submit">Search</button>
       </form>
     </div>
 
     <div class='ingredient-selector hidden'>
+      <h2>Choose the ingredients you would like to use.</h2>
       <p>Select Protein:</p>
       <div class='ingredient-list protein hidden'>
         <button value="bacon">Bacon</button>
@@ -235,6 +237,9 @@
         <button value="vanilla">Vanilla</button>
         <button value="white pepper">White Pepper</button>
       </div>
+      <h2>Your current recipe ingredients:</h2>
+      <div id="current-ingredients"></div>
+      <button id="confirm-ingredients">Find Recipes</button>
     </div>
 
     <div class="js-search-results hidden"></div>

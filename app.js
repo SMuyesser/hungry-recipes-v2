@@ -4,10 +4,21 @@ var SearchRequest_URL = 'http://food2fork.com/api/search';
 //array to hold selected ingredients
 var selected = []; 
 
-//show nav after leaving homescreen and remove homepage buttons
+//show nav after leaving homepage and remove homepage buttons
 $('body').on('click', 'button#recipe-search, button#ingredient-search', function(event) {
   $('nav').removeClass('hidden');
   $('div.home-container').addClass('hidden');
+});
+
+//show recipe search page
+$('body').on('click', 'button#recipe-search', function(event) {
+  $('#title-searchbar').removeClass('hidden');
+  $('div.js-seach-results').removeClass('hidden');
+});
+
+//show ingredient search page
+$('body').on('click', 'button#ingredient-search', function(event) {
+  $('.ingredient-selector').removeClass('hidden');
 });
 
 //nav home button
@@ -32,39 +43,36 @@ $('nav').on('click', 'button#nav-ingredient-search', function(event) {
   $('#title-searchbar').addClass('hidden');
   $('div.js-seach-results').addClass('hidden');
 });
- 
-//show recipe search page
-$('body').on('click', 'button#recipe-search', function(event) {
-  $('#title-searchbar').removeClass('hidden');
-  $('div.js-seach-results').removeClass('hidden');
-});
-
-//show ingredient search page
-$('body').on('click', 'button#ingredient-search', function(event) {
-  $('.ingredient-selector').removeClass('hidden');
-});
 
 //change button color and add ingredient to selected array on click, remove and change color back if clicked again
 $('div.ingredient-list').on('click', 'button', function(event) { 
+  var curIngredients = $('div#current-ingredients');
   var ingredientVal = $(this).val();
+  //regex below replaces spaces in ingredientVal with '-'' for the id
+  var ingredientId = ingredientVal.replace(/\s+/g, '-');
   if (!$(this).hasClass('selected-button')) {
     $(this).addClass('selected-button');
-    console.log(ingredientVal);
     if (ingredientVal=="NaN") {
       return selected;
     } else {
-      selected.push(ingredientVal); 
+      selected.push(ingredientVal);
+      curIngredients.append('<p id=' + ingredientId + '>' + ingredientVal + '</p>'); 
     }
   } else {
     $(this).removeClass('selected-button');
-    console.log(ingredientVal);
     var removeItemIndex = selected.indexOf(ingredientVal);
-    console.log(removeItemIndex);
     selected.splice(removeItemIndex, 1); 
+    var removeIngredient = '"#' + ingredientVal + '"';
+    console.log(removeIngredient);
+    curIngredients.children().remove('#'+ingredientId);
   }
   return selected;
 });
 
+//submit ingredient search
+$('body').on('click', 'button#confirm-ingredients', function(event) {
+  
+});
 
 
   

@@ -99,12 +99,13 @@ div.home-container {
 button#recipe-search,
 button#ingredient-search {
   width: 100%;
-  height: 50px;
+  height: 250px;
   display: block;
   clear: both;
   background-color: grey;
   margin-bottom: 10px;
   background-color: #3A67DB;
+  font-size: 2em;
 }
 
 button#ingredient-search {
@@ -117,11 +118,11 @@ button#ingredient-search {
   INGREDIENT SEARCH
 ********************************************/
 
-div.ingredient-selector {
+/* div.ingredient-selector {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
+} */
 
 div.ingredient-list {
   display: flex;
