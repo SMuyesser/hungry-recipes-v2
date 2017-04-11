@@ -76,14 +76,6 @@ nav ul li{
   font-size: .9em;
 }
 
-nav ul li::after {
-  content: ' | ';
-  color: #FFDB6E
-}
-
-nav ul li button#nav-ingredient-search::after {
-  content: '';
-}
 
 
 
