@@ -19,6 +19,8 @@ $('body').on('click', 'button#recipe-search', function(event) {
 //show ingredient search page
 $('body').on('click', 'button#ingredient-search', function(event) {
   $('.ingredient-selector').removeClass('hidden');
+  $('div#current-ingredients-section').removeClass('hidden');
+  $('button#confirm-ingredients').removeClass('hidden');
 });
 
 //nav home button
@@ -28,11 +30,15 @@ $('nav').on('click', 'button#nav-home', function(event) {
   $('#title-searchbar').addClass('hidden');
   $('div.js-seach-results').addClass('hidden');
   $('.ingredient-selector').addClass('hidden');
+  $('div#current-ingredients-section').addClass('hidden');
+  $('div#change-ingredients').addClass('hidden');
 });
 
 //nav recipe search button
 $('nav').on('click', 'button#nav-search-recipes', function(event) {
   $('.ingredient-selector').addClass('hidden');
+  $('div#current-ingredients-section').addClass('hidden');  
+  $('div#change-ingredients').addClass('hidden');
   $('#title-searchbar').removeClass('hidden');
   $('div.js-seach-results').removeClass('hidden');
 });
@@ -40,15 +46,18 @@ $('nav').on('click', 'button#nav-search-recipes', function(event) {
 //nav ingredient search button
 $('nav').on('click', 'button#nav-ingredient-search', function(event) {
   $('.ingredient-selector').removeClass('hidden');
+  $('div#current-ingredients-section').removeClass('hidden');
+  $('button#confirm-ingredients').removeClass('hidden');
   $('#title-searchbar').addClass('hidden');
   $('div.js-seach-results').addClass('hidden');
+  $('div#change-ingredients').addClass('hidden');
 });
 
 //change button color and add ingredient to selected array on click, remove and change color back if clicked again
 $('div.ingredient-list').on('click', 'button', function(event) { 
   var curIngredients = $('div#current-ingredients');
   var ingredientVal = $(this).val();
-  //regex below replaces spaces in ingredientVal with '-'' for the id
+  //regex below replaces spaces in ingredientVal with '-' to ensure propper format for the id
   var ingredientId = ingredientVal.replace(/\s+/g, '-');
   if (!$(this).hasClass('selected-button')) {
     $(this).addClass('selected-button');
@@ -69,9 +78,25 @@ $('div.ingredient-list').on('click', 'button', function(event) {
   return selected;
 });
 
-//submit ingredient search
-$('body').on('click', 'button#confirm-ingredients', function(event) {
-  
+//submit ingredient search button
+$('body').on('click', 'button#confirm-ingredients', function getSearchFromApi(searchTerm, callback) {
+  $('button#confirm-ingredients').addClass('hidden');
+  $('.ingredient-selector').addClass('hidden');
+  $('div#change-ingredients').removeClass('hidden');
+  var searchTerm = selected.toString();
+  var query = {
+    key: '67da4d03f58c56d22ee2072df42106f9',
+    q: searchTerm,
+  }
+  $.getJSON(SearchRequest_URL, query, callback);
+});
+
+//change ingredients if search returns undesired results
+$('body').on('click', 'button#change-ingredient-btn', function(event) {
+  $('.ingredient-selector').removeClass('hidden');
+  $('div#current-ingredients-section').removeClass('hidden');
+  $('button#confirm-ingredients').removeClass('hidden');
+  $('div#change-ingredients').addClass('hidden');
 });
 
 
@@ -90,7 +115,7 @@ function displaySearchData(data) {
   var displayElem = $('.js-search-results');
   data.items.forEach(function(item) {
     var elem = $('.js-result-template').children().clone();
-    var imageUrl = item.snippet.thumbnails.default.url;
+    var imageUrl = recipes.image_url;
     elem.find('img').attr('src', imageUrl);
     displayElem.append(elem);
   });
@@ -112,4 +137,3 @@ function watchSubmit() {
 $(function() {
     watchSubmit();
 });
-
