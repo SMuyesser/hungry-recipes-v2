@@ -176,7 +176,7 @@ div current-ingredients p:last-child::after {
   display: inline-block;
   margin: 10px auto;
   padding: 5px auto;
-  width: 50%;
+  width: 90%;
   text-align: center;
   background-color: rgba(255, 255, 255, .7);
   border: 2px solid black;
@@ -185,7 +185,7 @@ div current-ingredients p:last-child::after {
 .search-result-item img {
   margin: 5px;
   border: 3px solid white;
-  width: 50%;
+  width: 75%;
 }
 
 .search-result-item img:hover {

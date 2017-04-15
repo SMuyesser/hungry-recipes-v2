@@ -92,7 +92,11 @@ $('body').on('click', 'button#confirm-ingredients', function getSearchFromApi(ev
     var ingRecipes = data.recipes.map(function(recipe) {
       var elem = $('.js-result-template').children().clone();
       var imageUrl = recipe.image_url;
+      var sourceUrl = recipe.source_url;
+      var recipeName = recipe.title;
+      elem.find('h4').html(recipeName);
       elem.find('img').attr('src', imageUrl);
+      elem.find('a').attr('href', sourceUrl);
       return elem;
     })
     displayElem.html(ingRecipes);
@@ -129,7 +133,11 @@ function displaySearchData(data) {
   var recipes = data.recipes.map(function(recipe) {
     var elem = $('.js-result-template').children().clone();
     var imageUrl = recipe.image_url;
+    var sourceUrl = recipe.source_url;
+    var recipeName = recipe.title;
+    elem.find('h4').html(recipeName);
     elem.find('img').attr('src', imageUrl);
+    elem.find('a').attr('href', sourceUrl);
     return elem;
   });
   displayElem.html(recipes);
