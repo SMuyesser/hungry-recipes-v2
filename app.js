@@ -79,7 +79,7 @@ $('div.ingredient-list').on('click', 'button', function(event) {
 });
 
 //submit ingredient search button
-$('body').on('click', 'button#confirm-ingredients', function getSearchFromApi(searchTerm, callback) {
+$('body').on('click', 'button#confirm-ingredients', function getSearchFromApi(event) {
   $('button#confirm-ingredients').addClass('hidden');
   $('.ingredient-selector').addClass('hidden');
   $('div#change-ingredients').removeClass('hidden');
@@ -87,7 +87,16 @@ $('body').on('click', 'button#confirm-ingredients', function getSearchFromApi(se
   var query = {
     q: searchTerm,
   }
-  $.getJSON(SearchRequest_URL, query, callback);
+  $.getJSON(SearchRequest_URL, query, function(data) {
+    var displayElem = $('.js-search-results');
+    var ingRecipes = data.recipes.map(function(recipe) {
+      var elem = $('.js-result-template').children().clone();
+      var imageUrl = recipe.image_url;
+      elem.find('img').attr('src', imageUrl);
+      return elem;
+    })
+    displayElem.html(ingRecipes);
+  });
 });
 
 //change ingredients if search returns undesired results
@@ -98,6 +107,12 @@ $('body').on('click', 'button#change-ingredient-btn', function(event) {
   $('div#change-ingredients').addClass('hidden');
 });
 
+$('body').on('click', 'button#reset', function(event) {
+  var curIngredients = $('div#current-ingredients')
+  $('.selected-button').removeClass('selected-button');
+  curIngredients.children().remove();
+  selected.length=0; 
+});
 
   
 
@@ -111,12 +126,13 @@ function getSearchFromApi(searchTerm, callback) {
 
 function displaySearchData(data) {
   var displayElem = $('.js-search-results');
-  data.items.forEach(function(item) {
+  var recipes = data.recipes.map(function(recipe) {
     var elem = $('.js-result-template').children().clone();
-    var imageUrl = recipes.image_url;
+    var imageUrl = recipe.image_url;
     elem.find('img').attr('src', imageUrl);
-    displayElem.append(elem);
+    return elem;
   });
+  displayElem.html(recipes);
 }
 
 function clearResults() {
