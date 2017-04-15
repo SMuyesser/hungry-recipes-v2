@@ -32,6 +32,7 @@ $('nav').on('click', 'button#nav-home', function(event) {
   $('.ingredient-selector').addClass('hidden');
   $('div#current-ingredients-section').addClass('hidden');
   $('div#change-ingredients').addClass('hidden');
+  clearResults();
 });
 
 //nav recipe search button
@@ -41,6 +42,7 @@ $('nav').on('click', 'button#nav-search-recipes', function(event) {
   $('div#change-ingredients').addClass('hidden');
   $('#title-searchbar').removeClass('hidden');
   $('div.js-seach-results').removeClass('hidden');
+  clearResults();
 });
 
 //nav ingredient search button
@@ -51,6 +53,7 @@ $('nav').on('click', 'button#nav-ingredient-search', function(event) {
   $('#title-searchbar').addClass('hidden');
   $('div.js-seach-results').addClass('hidden');
   $('div#change-ingredients').addClass('hidden');
+  clearResults();
 });
 
 //change button color and add ingredient to selected array on click, remove and change color back if clicked again
@@ -117,8 +120,6 @@ $('body').on('click', 'button#reset', function(event) {
   curIngredients.children().remove();
   selected.length=0; 
 });
-
-  
 
 //food2fork recipe search api
 function getSearchFromApi(searchTerm, callback) {
