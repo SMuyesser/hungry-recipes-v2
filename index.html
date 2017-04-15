@@ -35,7 +35,7 @@
       </form>
     </div>
 
-    <div class='ingredient-selector hidden'>
+    <div id="ingredient-selector" class='ingredient-selector hidden'>
       <h2>Choose the ingredients you would like to use.</h2>
       <p>Select Protein:</p>
       <div class='ingredient-list protein hidden'>
@@ -237,6 +237,7 @@
         <button value="vanilla">Vanilla</button>
         <button value="white pepper">White Pepper</button>
       </div>
+      <button id="reset">Reset Selection</button>
     </div>
 
     <div id="current-ingredients-section" class="hidden">
@@ -245,19 +246,18 @@
       <button id="confirm-ingredients">Find Recipes</button>
     </div>
 
+    <div class="js-search-results search-results"></div>
+
     <div id="change-ingredients" class="hidden">
       <h3>Didn't find the recipe you were looking for?</h3>
-      <button id="change-ingredient-btn">Change Ingredients</button>
+      <a href="#ingredient-selector"><button id="change-ingredient-btn">Change Ingredients</button></a>
     </div>
-
-    <div class="js-search-results hidden"></div>
 
     <div style="display:none">
       <div class="js-result-template">
         <div class="search-result-item">
-          <a href="" target="_blank">
-            <img src="">
-          </a>
+            <p></p>
+            <a href="" target="_blank"><img src=""></a>
         </div>
       </div>
     </div>

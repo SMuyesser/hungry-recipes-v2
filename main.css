@@ -107,6 +107,16 @@ button#ingredient-search {
 
 
 /********************************************
+  RECIPE SEARCH
+********************************************/
+
+div#title-searchbar {
+  text-align: center;
+}
+
+
+
+/********************************************
   INGREDIENT SEARCH
 ********************************************/
 
@@ -146,19 +156,43 @@ button.selected-button {
   border: 1px solid #2CAB00;
 }
 
-
-
-
-/* .search-result-item {
+div#current-ingredients p {
   display: inline-block;
-  margin: auto auto;
+}
+
+div#current-ingredients p::after {
+  content: ',  ' ;
+}
+
+div current-ingredients p:last-child::after {
+  content: '';
+}
+
+.search-results {
+  text-align: center;
+}
+
+.search-result-item {
+  display: inline-block;
+  margin: 10px auto;
+  padding: 5px auto;
+  width: 50%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .7);
+  border: 2px solid black;
 }
 
 .search-result-item img {
   margin: 5px;
   border: 3px solid white;
+  width: 50%;
 }
 
 .search-result-item img:hover {
   box-shadow: 3px 3px 5px black;
-}  */
+} 
+
+div#change-ingredients {
+  text-align: center;
+  margin-bottom: 20px;
+}
