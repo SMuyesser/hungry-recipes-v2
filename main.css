@@ -4,7 +4,7 @@
 
 html {
   box-sizing: border-box;
-  background-color: #ECBA59;
+  background-color: #F0D6A4;
 
 }
 
@@ -82,23 +82,61 @@ nav ul li{
 ********************************************/
 
 div.home-container {
-  width: 100%;
+  width: 90%;
+  margin: 20px auto;
 }
 
 button#recipe-search,
 button#ingredient-search {
   width: 100%;
   height: 250px;
-  display: block;
+  display: flex;
+  justify-content:  center;
   clear: both;
-  background-color: grey;
-  margin-bottom: 10px;
-  background-color: #3A67DB;
+  margin-bottom: 15px;
   font-size: 2em;
+  background-size:  cover;
+  color:  white;
+  padding: 0;
 }
 
+button#recipe-search span,
+button#ingredient-search span {
+  width: 100%;
+  height: 100%; 
+  top:  0;
+  left: 0;
+}
+
+button#recipe-search span h3,
+button#ingredient-search span h3 {
+  width:  100%;
+  margin-top:   0;
+  background-color:  #940A0A; 
+  padding: 5px;
+  text-align:   center;
+} 
+
+button#recipe-search span:hover,
+button#ingredient-search span:hover{
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+
+button#recipe-search:hover,
+button#ingredient-search:hover {
+    border:  3px solid #940A0A;
+}
+
+button#recipe-search {
+  background-image: url(Salad-header.jpg);
+}
+
+
 button#ingredient-search {
-  background-color: #DB3A3A;
+  background-image: url(Berry-header.jpg);
 }
 
 
