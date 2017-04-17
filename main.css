@@ -38,11 +38,11 @@ div#header {
 #header h3{
   text-align: center;
   margin: 5px;
-  background-color: rgba(255, 255, 255, .7);
+  background-color: #940A0A;
   width: 180px;
   padding: 5px;
-  color:#800A0A;
-  border: 1px solid #545353;
+  color: white;
+  border: 1px solid white;
 }
 
 #header h3 {
@@ -103,15 +103,14 @@ button#ingredient-search {
 button#recipe-search span,
 button#ingredient-search span {
   width: 100%;
-  height: 100%; 
-  top:  0;
-  left: 0;
+  height: 250px; 
 }
 
 button#recipe-search span h3,
 button#ingredient-search span h3 {
+  box-sizing: border-box;
   width:  100%;
-  margin-top:   0;
+  margin-top: 0;
   background-color:  #940A0A; 
   padding: 5px;
   text-align:   center;
