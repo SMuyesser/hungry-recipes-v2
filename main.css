@@ -161,7 +161,7 @@ div#title-searchbar {
 }
 
 #title-searchbar input {
-  width: 30%;
+  width: 50%;
 }
 
 #title-searchbar button {
@@ -265,5 +265,9 @@ div#change-ingredients {
   button#recipe-search span h3,
   button#ingredient-search span h3 {
     font-size: 1em;
+  }
+
+  #title-searchbar input {
+    width: 35%;
   }
 }
