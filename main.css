@@ -175,6 +175,10 @@ div#title-searchbar {
   INGREDIENT SEARCH
 ********************************************/
 
+div.ingredient-selector {
+  text-align:   center;
+}
+
 div.ingredient-list {
   display: flex;
   flex-direction: row;
@@ -248,14 +252,22 @@ div current-ingredients p:last-child::after {
   box-shadow: 3px 3px 5px black;
 } 
 
+/* bottom buttons formatting */
+
 div#change-ingredients {
   text-align: center;
   margin-bottom: 20px;
 }
 
 div#back-to-top {
-  text-align: center;
-  margin-bottom: 20px;
+  width:  100%;
+  text-align:  center;
+  margin-bottom:  20px;
+}
+
+div#current-ingredients-section {
+  text-align:   center;
+  margin:  20px auto;
 }
 
 
