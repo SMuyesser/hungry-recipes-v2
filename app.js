@@ -32,6 +32,11 @@ $('nav').on('click', 'button#nav-home', function(event) {
   $('.ingredient-selector').addClass('hidden');
   $('div#current-ingredients-section').addClass('hidden');
   $('div#change-ingredients').addClass('hidden');
+  $('#back-to-top').addClass('hidden');
+  var curIngredients = $('div#current-ingredients')
+  $('.selected-button').removeClass('selected-button');
+  curIngredients.children().remove();
+  selected.length=0; 
   clearResults();
 });
 
@@ -40,8 +45,13 @@ $('nav').on('click', 'button#nav-search-recipes', function(event) {
   $('.ingredient-selector').addClass('hidden');
   $('div#current-ingredients-section').addClass('hidden');  
   $('div#change-ingredients').addClass('hidden');
+  $('#back-to-top').addClass('hidden');
   $('#title-searchbar').removeClass('hidden');
   $('div.js-seach-results').removeClass('hidden');
+  var curIngredients = $('div#current-ingredients')
+  $('.selected-button').removeClass('selected-button');
+  curIngredients.children().remove();
+  selected.length=0; 
   clearResults();
 });
 
@@ -53,6 +63,11 @@ $('nav').on('click', 'button#nav-ingredient-search', function(event) {
   $('#title-searchbar').addClass('hidden');
   $('div.js-seach-results').addClass('hidden');
   $('div#change-ingredients').addClass('hidden');
+  $('#back-to-top').addClass('hidden');
+  var curIngredients = $('div#current-ingredients')
+  $('.selected-button').removeClass('selected-button');
+  curIngredients.children().remove();
+  selected.length=0; 
   clearResults();
 });
 
@@ -114,6 +129,7 @@ $('body').on('click', 'button#change-ingredient-btn', function(event) {
   $('div#change-ingredients').addClass('hidden');
 });
 
+//resets current ingredient selection
 $('body').on('click', 'button#reset', function(event) {
   var curIngredients = $('div#current-ingredients')
   $('.selected-button').removeClass('selected-button');
@@ -128,6 +144,12 @@ function getSearchFromApi(searchTerm, callback) {
   }
   $.getJSON(SearchRequest_URL, query, callback);
 }
+
+$(window).scroll(function() {
+    if($(window).scrollTop() == $(document).height() - $(window).height()) {
+           // ajax call get data from server and append to the div
+    }
+});
 
 function displaySearchData(data) {
   var displayElem = $('.js-search-results');
@@ -154,6 +176,7 @@ function watchSubmit() {
     clearResults();
     var query = $(this).find('.js-query').val();
     getSearchFromApi(query, displaySearchData);
+    $('#back-to-top').removeClass('hidden');
   });
 }
 

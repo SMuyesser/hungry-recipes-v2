@@ -56,7 +56,7 @@ div#header {
 ********************************************/
 
 nav {
-  background: #510606; 
+  background: #940A0A; 
   color: #F5B800;
   display: flex;
   align-items: center;
@@ -73,6 +73,17 @@ nav ul {
 nav ul li{
   display: inline-block;
   font-size: .9em;
+}
+
+nav ul li button {
+  border: none;
+  background-color: #940A0A;
+  color: white;
+}
+
+nav ul li button:hover {
+  background-color: #FF0000;
+  color: black;
 }
 
 
@@ -114,6 +125,7 @@ button#ingredient-search span h3 {
   background-color:  #940A0A; 
   padding: 5px;
   text-align:   center;
+  font-size: .5em;
 } 
 
 button#recipe-search span:hover,
@@ -148,6 +160,15 @@ div#title-searchbar {
   text-align: center;
 }
 
+#title-searchbar input {
+  width: 30%;
+}
+
+#title-searchbar button {
+  background-color: #940A0A;
+  color: white;
+}
+
 
 
 /********************************************
@@ -166,15 +187,15 @@ div.ingredient-list {
 }
 
 .ingredient-list button {
-  background-color: #510606;
+  background-color: #940A0A;
   display: inline;
   text-align: center;
   widows: auto;
   padding: 3px;
   margin-right: 5px;
   border-radius: 10%;
-  border: 1px solid #B00A0A;
-  color: #F5B800;
+  border: 1px solid white;
+  color: white;
   box-shadow: 2px 2px 3px black;
 }
 
@@ -212,6 +233,7 @@ div current-ingredients p:last-child::after {
   padding: 5px auto;
   width: 90%;
   text-align: center;
+  font-size: 1.5em;
   background-color: rgba(255, 255, 255, .7);
   border: 2px solid black;
 }
@@ -229,4 +251,19 @@ div current-ingredients p:last-child::after {
 div#change-ingredients {
   text-align: center;
   margin-bottom: 20px;
+}
+
+
+/* responsive */
+
+@media only screen and (min-device-width: 768px) {
+  div.search-result-item {
+    width: 30%;
+    margin: 5px;
+  }
+
+  button#recipe-search span h3,
+  button#ingredient-search span h3 {
+    font-size: 1em;
+  }
 }
