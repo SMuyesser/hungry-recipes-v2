@@ -253,10 +253,15 @@ div#change-ingredients {
   margin-bottom: 20px;
 }
 
+div#back-to-top {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 
 /* responsive */
 
-@media only screen and (min-device-width: 768px) {
+@media screen and (min-device-width: 768px) {
   div.search-result-item {
     width: 30%;
     margin: 5px;
