@@ -214,10 +214,11 @@ div#current-ingredients p {
 }
 
 div#current-ingredients p::after {
-  content: ',  ' ;
+  content: ',' ;
+  margin-right: 5px;
 }
 
-div current-ingredients p:last-child::after {
+div#current-ingredients p:last-child::after {
   content: '';
 }
 

@@ -145,11 +145,15 @@ function getSearchFromApi(searchTerm, callback) {
   $.getJSON(SearchRequest_URL, query, callback);
 }
 
-$(window).scroll(function() {
-    if($(window).scrollTop() == $(document).height() - $(window).height()) {
-           // ajax call get data from server and append to the div
-    }
-});
+/*$('body').on('click', 'button#next-btn', function() {
+  var searchTerm = $(this).find('.js-query').val();
+  var query = {
+    q: searchTerm,
+    page: 2,
+  }
+  $.getJSON(SearchRequest_URL, query, displaySearchData());
+
+})*/
 
 function displaySearchData(data) {
   var displayElem = $('.js-search-results');
