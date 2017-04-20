@@ -201,6 +201,7 @@ div.ingredient-list {
   border: 1px solid white;
   color: white;
   box-shadow: 2px 2px 3px black;
+  flex-shrink: 0;
 }
 
 button.selected-button {
@@ -237,6 +238,7 @@ div#current-ingredients p:last-child::after {
   margin: 10px auto;
   padding: 5px auto;
   width: 90%;
+  height: 330px;
   text-align: center;
   font-size: 1.25em;
   background-color: rgba(255, 255, 255, .7);
@@ -247,6 +249,7 @@ div#current-ingredients p:last-child::after {
   margin: 5px;
   border: 3px solid white;
   width: 75%;
+  height: 75%;
 }
 
 .search-result-item img:hover {
