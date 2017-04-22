@@ -127,7 +127,8 @@ button#ingredient-search span h3 {
   background-color:  #940A0A; 
   padding: 5px;
   text-align:   center;
-  font-size: .5em;
+  font-size: 1.5em;
+  font-family: 'Amatic SC', cursive;
 } 
 
 button#recipe-search span:hover,
@@ -267,6 +268,14 @@ div#current-ingredients p::after {
 
 div#current-ingredients p:last-child::after {
   content: '';
+}
+
+div#change-ingredients h3 {
+  width: 100%;
+  background-color: #510000;
+  color: white;
+  padding: 10px 5px;
+  margin: 20px auto;
 }
 
 #confirm-ingredients {
