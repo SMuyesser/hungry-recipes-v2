@@ -24,7 +24,7 @@ div#header {
   width: 100%;
   height: 200px;
   margin-bottom: 0;
-  border-bottom: 2px solid #800A0A;
+  border-bottom: 2px solid #510000;
   position: relative;
   top: 0;
   display: flex;
@@ -81,11 +81,11 @@ nav ul li button {
   border: none;
   background-color: #940A0A;
   color: white;
+  height: 25px;
 }
 
 nav ul li button:hover {
-  background-color: #FF0000;
-  color: black;
+  background-color: #510000;
 }
 
 
@@ -163,6 +163,14 @@ div#title-searchbar {
   margin-bottom: 20px;
 }
 
+#title-searchbar p {
+  font-size: 2em;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  color: #510000;
+}
+
 #title-searchbar input {
   width: 50%;
 }
@@ -172,7 +180,11 @@ div#title-searchbar {
   color: white;
 }
 
-
+.search-results h2 {
+  font-family: 'Amatic SC', cursive;
+  color: #510000;
+  font-weight: bold;
+}
 
 /********************************************
   INGREDIENT SEARCH
@@ -180,6 +192,21 @@ div#title-searchbar {
 
 div.ingredient-selector {
   text-align:   center;
+}
+
+div.ingredient-selector h2,
+div.ingredient-selector p {
+  font-family: 'Amatic SC', cursive;
+  color: #510000;
+  font-weight: bolder;
+}
+
+div.ingredient-selector h2 {
+  font-size: 2em;
+}
+
+div.ingredient-selector p {
+  font-size: 1.5em;
 }
 
 div.ingredient-list {
@@ -194,7 +221,7 @@ div.ingredient-list {
 }
 
 .ingredient-list button {
-  background-color: #940A0A;
+  background-color: #442701;
   display: inline;
   text-align: center;
   widows: auto;
@@ -209,8 +236,24 @@ div.ingredient-list {
 
 button.selected-button {
   color: white;
-  background-color: #165600;
+  background-color: #207E00;
   border: 1px solid #2CAB00;
+}
+
+div#current-ingredients-section {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+}
+
+div#current-ingredients-section h2,
+div#change-ingredients h3 {
+  font-family: 'Amatic SC', cursive;
+  color: #510000;
+  font-weight: bolder;
+  font-size: 2em;
+  margin: 5px;
 }
 
 div#current-ingredients p {
@@ -224,6 +267,10 @@ div#current-ingredients p::after {
 
 div#current-ingredients p:last-child::after {
   content: '';
+}
+
+#confirm-ingredients {
+  margin-top: 2px;
 }
 
 
@@ -260,7 +307,7 @@ div#current-ingredients p:last-child::after {
 
 .search-result-item img {
   margin: 5px;
-  border: 3px solid #510000;
+  border: 3px solid white;
   width: 75%;
   height: 75%;
 }
@@ -275,7 +322,7 @@ div#current-ingredients p:last-child::after {
 
 div#change-ingredients {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 150px;
 }
 
 div#recipe-search-buttons {
@@ -287,7 +334,31 @@ div#recipe-search-buttons {
 
 div#current-ingredients-section {
   text-align:   center;
-  margin:  20px auto;
+  margin: 0;
+  padding-bottom: 7px;
+  border-top: 3px solid black;
+  overflow-x: scroll;
+  z-index: 10;
+}
+
+div#current-ingredients-section p {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+button#reset {
+  margin-bottom: 150px;
+}
+
+button#reset,
+button#confirm-ingredients,
+button#show-more-ingRecipe-btn,
+button#change-ingredient-btn,
+button#show-more-recipe-btn,
+button#back-to-top-btn {
+  background-color: #940A0A;
+  color: white;
+  padding: 5px;
 }
 
 
