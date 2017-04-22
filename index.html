@@ -5,6 +5,7 @@
     <meta name='viewport' content="width=device-width, initial-scale=1">
     <title>WHAT ARE YOU CRAVING?</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Amatic+SC" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
@@ -247,6 +248,7 @@
     </div>
 
     <div id="change-ingredients" class="hidden">
+      <button id="show-more-ingrecipe-btn">Show More Recipes</button>
       <h3>Didn't find the recipe you were looking for?</h3>
       <a href="#ingredient-selector"><button id="change-ingredient-btn">Change Ingredients</button></a>
     </div>
@@ -257,20 +259,17 @@
     <div style="display:none">
       <div class="js-result-template">
         <div class="search-result-item">
-            <h4></h4>
+            <h5></h5>
             <a href="" target="_blank"><img src=""></a>
         </div>
       </div>
     </div>
 
-    <div id="back-to-top" class="hidden">
-      <a href="#title-searchbar"><button id="back-to-top-btn">Back To Top</button></a>
+
+    <div id="recipe-search-buttons" class="hidden">
+      <button id="show-more-recipe-btn">Show More Recipes</button>
+      <a href="#header"><button id="back-to-top-btn">Back To Top</button></a>
     </div>
-
-   <div id="next">
-     <button id="next-btn">Next</button>
-   </div> 
-
 
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src='app.js' type='text/javascript'></script>

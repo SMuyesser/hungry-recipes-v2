@@ -5,7 +5,6 @@
 html {
   box-sizing: border-box;
   background-color: #F0D6A4;
-
 }
 
 .hidden {
@@ -43,10 +42,13 @@ div#header {
   padding: 5px;
   color: white;
   border: 1px solid white;
+  font-size: 3em;
+  font-family: 'Amatic SC', cursive;
 }
 
 #header h3 {
   width: 220px;
+  font-size: 1.5em;
 }
 
 
@@ -158,6 +160,7 @@ button#ingredient-search {
 
 div#title-searchbar {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 #title-searchbar input {
@@ -236,18 +239,28 @@ div#current-ingredients p:last-child::after {
 .search-result-item {
   display: inline-block;
   margin: 10px auto;
-  padding: 5px auto;
+  padding: 5px;
   width: 90%;
-  height: 330px;
   text-align: center;
   font-size: 1.25em;
-  background-color: rgba(255, 255, 255, .7);
+  background: linear-gradient(#510000 25%, #940A0A);
   border: 2px solid black;
+  overflow: hidden;
+}
+
+.search-result-item h5 {
+  font-family: 'Gloria Hallelujah', cursive;
+  color: white;
+  width: 100%;
+  margin: 5px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  text-align: center;
 }
 
 .search-result-item img {
   margin: 5px;
-  border: 3px solid white;
+  border: 3px solid #510000;
   width: 75%;
   height: 75%;
 }
@@ -256,17 +269,20 @@ div#current-ingredients p:last-child::after {
   box-shadow: 3px 3px 5px black;
 } 
 
-/* bottom buttons formatting */
+/***********************************************
+     bottom buttons formatting 
+***********************************************/
 
 div#change-ingredients {
   text-align: center;
   margin-bottom: 20px;
 }
 
-div#back-to-top {
+div#recipe-search-buttons {
   width:  100%;
   text-align:  center;
-  margin-bottom:  20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 div#current-ingredients-section {
@@ -275,11 +291,13 @@ div#current-ingredients-section {
 }
 
 
-/* responsive */
+/*************************************************
+       responsive 
+*************************************************/
 
 @media screen and (min-device-width: 768px) {
   div.search-result-item {
-    width: 30%;
+    width: 25%;
     margin: 5px;
   }
 
@@ -290,5 +308,25 @@ div#current-ingredients-section {
 
   #title-searchbar input {
     width: 35%;
+  }
+
+  .search-result-item {
+    display: inline-block;
+    margin: 10px auto;
+    padding: 5px auto;
+    width: 90%;
+    height: 350px;
+    text-align: center;
+    font-size: 1.25em;
+    overflow: hidden;
+  }
+
+  .search-result-item img {
+    position: relative;
+    width:  250px;
+    height: 250px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
   }
 }

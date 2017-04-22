@@ -32,6 +32,7 @@ $('nav').on('click', 'button#nav-home', function(event) {
   $('.ingredient-selector').addClass('hidden');
   $('div#current-ingredients-section').addClass('hidden');
   $('div#change-ingredients').addClass('hidden');
+  $('div#recipe-search-buttons').addClass('hidden');
   $('#back-to-top').addClass('hidden');
   var curIngredients = $('div#current-ingredients')
   $('.selected-button').removeClass('selected-button');
@@ -46,6 +47,7 @@ $('nav').on('click', 'button#nav-search-recipes', function(event) {
   $('div#current-ingredients-section').addClass('hidden');  
   $('div#change-ingredients').addClass('hidden');
   $('#back-to-top').addClass('hidden');
+  $('div#recipe-search-buttons').addClass('hidden');
   $('#title-searchbar').removeClass('hidden');
   $('div.js-seach-results').removeClass('hidden');
   var curIngredients = $('div#current-ingredients')
@@ -64,6 +66,7 @@ $('nav').on('click', 'button#nav-ingredient-search', function(event) {
   $('div.js-seach-results').addClass('hidden');
   $('div#change-ingredients').addClass('hidden');
   $('#back-to-top').addClass('hidden');
+  $('div#recipe-search-buttons').addClass('hidden');
   var curIngredients = $('div#current-ingredients')
   $('.selected-button').removeClass('selected-button');
   curIngredients.children().remove();
@@ -112,7 +115,7 @@ $('body').on('click', 'button#confirm-ingredients', function getSearchFromApi(ev
       var imageUrl = recipe.image_url;
       var sourceUrl = recipe.source_url;
       var recipeName = recipe.title;
-      elem.find('h4').html(recipeName);
+      elem.find('h5').html(recipeName);
       elem.find('img').attr('src', imageUrl);
       elem.find('a').attr('href', sourceUrl);
       return elem;
@@ -147,7 +150,7 @@ function getSearchFromApi(searchTerm, callback) {
 
 //next page of results
 var page=1;
-$('body').on('click', 'button#next-btn', function(event) {
+$('body').on('click', 'button#show-more-recipe-btn', function(event) {
   var searchTerm = $('#title-searchbar').find('.js-query').val();
   page += 1;
   var query = {
@@ -161,7 +164,7 @@ $('body').on('click', 'button#next-btn', function(event) {
       var imageUrl = recipe.image_url;
       var sourceUrl = recipe.source_url;
       var recipeName = recipe.title;
-      elem.find('h4').html(recipeName);
+      elem.find('h5').html(recipeName);
       elem.find('img').attr('src', imageUrl);
       elem.find('a').attr('href', sourceUrl);
       return elem;
@@ -178,13 +181,13 @@ function displaySearchData(data) {
     var imageUrl = recipe.image_url;
     var sourceUrl = recipe.source_url;
     var recipeName = recipe.title;
-    elem.find('h4').html(recipeName);
+    elem.find('h5').html(recipeName);
     elem.find('img').attr('src', imageUrl);
     elem.find('a').attr('href', sourceUrl);
     return elem;
   });
   displayElem.html(recipes);
-  $('#back-to-top').removeClass('hidden');
+  $('div#recipe-search-buttons').removeClass('hidden');
 }
 
 function clearResults() {
