@@ -34,6 +34,8 @@ $('nav').on('click', 'button#nav-home', function(event) {
   $('div#change-ingredients').addClass('hidden');
   $('div#recipe-search-buttons').addClass('hidden');
   $('#back-to-top').addClass('hidden');
+  $('p#click-recImage-text').addClass('hidden');
+  $('p#click-ingImage-text').addClass('hidden');
   var curIngredients = $('div#current-ingredients')
   $('.selected-button').removeClass('selected-button');
   curIngredients.children().remove();
@@ -48,6 +50,8 @@ $('nav').on('click', 'button#nav-search-recipes', function(event) {
   $('div#change-ingredients').addClass('hidden');
   $('#back-to-top').addClass('hidden');
   $('div#recipe-search-buttons').addClass('hidden');
+  $('p#click-recImage-text').addClass('hidden');
+  $('p#click-ingImage-text').addClass('hidden');
   $('#title-searchbar').removeClass('hidden');
   $('div.js-seach-results').removeClass('hidden');
   var curIngredients = $('div#current-ingredients')
@@ -67,6 +71,8 @@ $('nav').on('click', 'button#nav-ingredient-search', function(event) {
   $('div#change-ingredients').addClass('hidden');
   $('#back-to-top').addClass('hidden');
   $('div#recipe-search-buttons').addClass('hidden');
+  $('p#click-ingImage-text').addClass('hidden');
+  $('p#click-recImage-text').addClass('hidden');
   var curIngredients = $('div#current-ingredients')
   $('.selected-button').removeClass('selected-button');
   curIngredients.children().remove();
@@ -101,6 +107,7 @@ $('div.ingredient-list').on('click', 'button', function(event) {
 
 //submit ingredient search button
 $('body').on('click', 'button#confirm-ingredients', function getSearchFromApi(event) {
+  $('div#initialLoadingProgress').removeClass('hidden');
   $('button#confirm-ingredients').addClass('hidden');
   $('.ingredient-selector').addClass('hidden');
   $('div#change-ingredients').removeClass('hidden');
@@ -120,6 +127,8 @@ $('body').on('click', 'button#confirm-ingredients', function getSearchFromApi(ev
       elem.find('a').attr('href', sourceUrl);
       return elem;
     })
+    $('p#click-ingImage-text').removeClass('hidden');
+    $('div#initialLoadingProgress').addClass('hidden');
     displayElem.html(ingRecipes);
   });
 });
@@ -151,6 +160,7 @@ function getSearchFromApi(searchTerm, callback) {
 //show more recipes
 var page=1;
 $('body').on('click', 'button#show-more-recipe-btn', function(event) {
+  $('div#moreLoadingProgress').removeClass('hidden');
   var searchTerm = $('#title-searchbar').find('.js-query').val();
   page += 1;
   var query = {
@@ -170,11 +180,13 @@ $('body').on('click', 'button#show-more-recipe-btn', function(event) {
       return elem;
     });
     displayElem.append(recipes);
+    $('div#moreLoadingProgress').addClass('hidden');
   });
 })
 
 //show more ingredient search recipes
 $('body').on('click', 'button#show-more-ingRecipe-btn', function(event) {
+  $('div#moreLoadingProgress').removeClass('hidden');
   var searchTerm = selected.toString();
   page += 1;
   var query = {
@@ -194,6 +206,7 @@ $('body').on('click', 'button#show-more-ingRecipe-btn', function(event) {
       return elem;
     });
     displayElem.append(recipes);
+    $('div#moreLoadingProgress').addClass('hidden');
   });
 })
 
@@ -216,7 +229,9 @@ function displaySearchData(data) {
       return elem;
     });
     displayElem.html(recipes);
+    $('p#click-recImage-text').removeClass('hidden');
     $('div#recipe-search-buttons').removeClass('hidden');
+    $('div#initialLoadingProgress').addClass('hidden');
   }
 }
 
@@ -229,6 +244,7 @@ function watchSubmit() {
     e.preventDefault();
     clearResults();
     var query = $(this).find('.js-query').val();
+    $('div#initialLoadingProgress').removeClass('hidden');
     getSearchFromApi(query, displaySearchData);
   });
 }

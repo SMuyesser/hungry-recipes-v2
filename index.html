@@ -32,9 +32,17 @@
       <form action="#" class="js-search-form">
         <p>Find a recipe for:</p>
         <input type="text" class="js-query" placeholder="Enter a recipe name...">
-        <button type="submit">Search</button>
+        <button type="submit">Search</button><br>
+        <p id="click-recImage-text" class='hidden'>Click an image below to see the recipe.</p>
       </form>
     </div>
+
+    <div id="initialLoadingProgress" class="hidden">
+        <p>Loading Recipes...</p>
+        <img src="load-circle.gif" alt="loading circle">
+    </div>
+
+    <p id='click-ingImage-text' class="hidden">Click an image below to see the recipe.</p>
 
     <div id="ingredient-selector" class='ingredient-selector hidden'>
       <h2>Choose the ingredients you would like to use.</h2>
@@ -268,6 +276,10 @@
 
 
     <div id="recipe-search-buttons" class="hidden">
+      <div id="moreLoadingProgress" class="hidden">
+        <p>Loading More Recipes...</p>
+        <img src="load-circle.gif" alt="loading circle">
+      </div>
       <button id="show-more-recipe-btn">Show More Recipes</button>
       <a href="#header"><button id="back-to-top-btn">Back To Top</button></a>
     </div>

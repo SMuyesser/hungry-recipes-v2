@@ -11,6 +11,15 @@ html {
   display: none;
 }
 
+div#initialLoadingProgress,
+div#moreLoadingProgress {
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
+  color: #510000;
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
 
 
 /********************************************
@@ -107,7 +116,7 @@ button#ingredient-search {
   justify-content:  center;
   clear: both;
   margin-bottom: 15px;
-  font-size: 2em;
+  font-size: 1em;
   background-size:  cover;
   color:  white;
   padding: 0;
@@ -172,6 +181,17 @@ div#title-searchbar {
   color: #510000;
 }
 
+p#click-recImage-text,
+p#click-ingImage-text {
+  font-size: 1.25em;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  color: #510000;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bolder;
+}
+
 #title-searchbar input {
   width: 50%;
 }
@@ -186,6 +206,8 @@ div#title-searchbar {
   color: #510000;
   font-weight: bold;
 }
+
+
 
 /********************************************
   INGREDIENT SEARCH
@@ -325,8 +347,10 @@ div#change-ingredients h3 {
   box-shadow: 3px 3px 5px black;
 } 
 
+
+
 /***********************************************
-     bottom buttons formatting 
+     BOTTOM BUTTONS FORMATTING
 ***********************************************/
 
 div#change-ingredients {
@@ -371,8 +395,9 @@ button#back-to-top-btn {
 }
 
 
+
 /*************************************************
-       responsive 
+      RESPONSIVE 
 *************************************************/
 
 @media screen and (min-device-width: 768px) {
@@ -388,6 +413,11 @@ button#back-to-top-btn {
 
   #title-searchbar input {
     width: 35%;
+  }
+
+  button#recipe-search,
+  button#ingredient-search {
+    font-size: 2em;
   }
 
   .search-result-item {
