@@ -110,7 +110,6 @@ $('body').on('click', 'button#confirm-ingredients', function getSearchFromApi(ev
   $('div#initialLoadingProgress').removeClass('hidden');
   $('button#confirm-ingredients').addClass('hidden');
   $('.ingredient-selector').addClass('hidden');
-  $('div#change-ingredients').removeClass('hidden');
   var searchTerm = selected.toString();
   var query = {
     q: searchTerm,
@@ -135,6 +134,7 @@ $('body').on('click', 'button#confirm-ingredients', function getSearchFromApi(ev
       $('button#show-more-ingRecipe-btn').removeClass('hidden');
       displayElem.html(ingRecipes);
     }
+      $('div#change-ingredients').removeClass('hidden');
       $('div#initialLoadingProgress').addClass('hidden');
   });
 });
