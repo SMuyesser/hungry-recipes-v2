@@ -116,20 +116,26 @@ $('body').on('click', 'button#confirm-ingredients', function getSearchFromApi(ev
     q: searchTerm,
   }
   $.getJSON(SearchRequest_URL, query, function(data) {
-    var displayElem = $('.js-search-results');
-    var ingRecipes = data.recipes.map(function(recipe) {
-      var elem = $('.js-result-template').children().clone();
-      var imageUrl = recipe.image_url;
-      var sourceUrl = recipe.source_url;
-      var recipeName = recipe.title;
-      elem.find('h5').html(recipeName);
-      elem.find('img').attr('src', imageUrl);
-      elem.find('a').attr('href', sourceUrl);
-      return elem;
-    })
-    $('p#click-ingImage-text').removeClass('hidden');
-    $('div#initialLoadingProgress').addClass('hidden');
-    displayElem.html(ingRecipes);
+    if (data.count === 0) {
+      $('p#click-ingImage-text').html('No Recipes Found').removeClass('hidden');
+      $('button#show-more-ingRecipe-btn').addClass('hidden');
+    } else {
+      var displayElem = $('.js-search-results');
+      var ingRecipes = data.recipes.map(function(recipe) {
+        var elem = $('.js-result-template').children().clone();
+        var imageUrl = recipe.image_url;
+        var sourceUrl = recipe.source_url;
+        var recipeName = recipe.title;
+        elem.find('h5').html(recipeName);
+        elem.find('img').attr('src', imageUrl);
+        elem.find('a').attr('href', sourceUrl);
+        return elem;
+      })
+      $('p#click-ingImage-text').html('Click an image below to see the recipe.').removeClass('hidden');
+      $('button#show-more-ingRecipe-btn').removeClass('hidden');
+      displayElem.html(ingRecipes);
+    }
+      $('div#initialLoadingProgress').addClass('hidden');
   });
 });
 
@@ -139,6 +145,8 @@ $('body').on('click', 'button#change-ingredient-btn', function(event) {
   $('div#current-ingredients-section').removeClass('hidden');
   $('button#confirm-ingredients').removeClass('hidden');
   $('div#change-ingredients').addClass('hidden');
+  $('p#click-ingImage-text').addClass('hidden');
+  clearResults();
 });
 
 //resets current ingredient selection
@@ -160,7 +168,7 @@ function getSearchFromApi(searchTerm, callback) {
 //show more recipes
 var page=1;
 $('body').on('click', 'button#show-more-recipe-btn', function(event) {
-  $('div#moreLoadingProgress').removeClass('hidden');
+  $('div.moreLoadingProgress').removeClass('hidden');
   var searchTerm = $('#title-searchbar').find('.js-query').val();
   page += 1;
   var query = {
@@ -180,13 +188,13 @@ $('body').on('click', 'button#show-more-recipe-btn', function(event) {
       return elem;
     });
     displayElem.append(recipes);
-    $('div#moreLoadingProgress').addClass('hidden');
+    $('div.moreLoadingProgress').addClass('hidden');
   });
 })
 
 //show more ingredient search recipes
 $('body').on('click', 'button#show-more-ingRecipe-btn', function(event) {
-  $('div#moreLoadingProgress').removeClass('hidden');
+  $('div.moreLoadingProgress').removeClass('hidden');
   var searchTerm = selected.toString();
   page += 1;
   var query = {
@@ -206,7 +214,7 @@ $('body').on('click', 'button#show-more-ingRecipe-btn', function(event) {
       return elem;
     });
     displayElem.append(recipes);
-    $('div#moreLoadingProgress').addClass('hidden');
+    $('div.moreLoadingProgress').addClass('hidden');
   });
 })
 
@@ -214,6 +222,8 @@ $('body').on('click', 'button#show-more-ingRecipe-btn', function(event) {
 function displaySearchData(data) {
   var displayElem = $('.js-search-results');
   if (data.count === 0) {
+    $('p#click-recImage-text').addClass('hidden');
+    $('div#recipe-search-buttons').addClass('hidden');
     var searchFor = $('.js-query').val();
     var noResults = "<h2>No recipes for " + searchFor + " were found.  How about trying to find a different recipe?</h2>"
     $('div.js-search-results').append(noResults);
@@ -231,8 +241,8 @@ function displaySearchData(data) {
     displayElem.html(recipes);
     $('p#click-recImage-text').removeClass('hidden');
     $('div#recipe-search-buttons').removeClass('hidden');
-    $('div#initialLoadingProgress').addClass('hidden');
   }
+  $('div#initialLoadingProgress').addClass('hidden');
 }
 
 function clearResults() {
