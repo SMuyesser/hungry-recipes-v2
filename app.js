@@ -92,7 +92,7 @@ $('div.ingredient-list').on('click', 'button', function(event) {
       return selected;
     } else {
       selected.push(ingredientVal);
-      curIngredients.append('<p id=' + ingredientId + '>' + ingredientVal + '</p>'); 
+      curIngredients.append('<p id=' + ingredientId + '>' + ingredientVal.toUpperCase() + '</p>'); 
     }
   } else {
     $(this).removeClass('selected-button');
@@ -245,10 +245,12 @@ function displaySearchData(data) {
   $('div#initialLoadingProgress').addClass('hidden');
 }
 
+//clears search results
 function clearResults() {
     $('.js-search-results').empty();
  }
 
+//function for submitting recipe search
 function watchSubmit() {
   $('.js-search-form').submit(function(e) {
     e.preventDefault();
