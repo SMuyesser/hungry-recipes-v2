@@ -59,6 +59,10 @@ div#header {
   font-family: 'Amatic SC', cursive;
 }
 
+#header a {
+  text-decoration: none;
+}
+
 #header h3 {
   width: 220px;
   font-size: 1.5em;
@@ -110,6 +114,10 @@ nav ul li button:hover {
 div.home-container {
   width: 90%;
   margin: 20px auto;
+}
+
+div.home-container a {
+  text-decoration: none;
 }
 
 button#recipe-search,
