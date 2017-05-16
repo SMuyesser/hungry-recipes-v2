@@ -14,11 +14,15 @@ html {
 div#initialLoadingProgress,
 div.moreLoadingProgress {
   text-align: center;
-  font-family: 'Amatic SC', cursive;
   font-size: 1.5em;
   color: #510000;
   font-weight: bolder;
   margin-bottom: 5px;
+}
+
+div#initialLoadingProgress p,
+div.moreLoadingProgress p {
+  font-family: 'Amatic SC', cursive;
 }
 
 a {
@@ -298,6 +302,10 @@ div#change-ingredients h3 {
   margin: 5px;
 }
 
+div#current-ingredients-section h2 {
+  text-decoration: underline;
+}
+
 div#current-ingredients p {
   display: inline-block;
 }
@@ -345,7 +353,6 @@ div#change-ingredients h3 {
 }
 
 .search-result-item h5 {
-  font-family: 'Gloria Hallelujah', cursive;
   color: white;
   width: 100%;
   margin: 5px;
@@ -422,7 +429,7 @@ button#confirm-ingredients {
       RESPONSIVE 
 *************************************************/
 
-@media screen and (min-device-width: 768px) {
+@media screen and (min-width: 768px) {
   div.search-result-item {
     width: 25%;
     margin: 5px;
