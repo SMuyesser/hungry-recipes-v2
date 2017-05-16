@@ -31,7 +31,7 @@ a {
 ********************************************/
 
 div#header {
-  background-image: url(Header.jpg);
+  background-image: url(images/Header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -166,12 +166,12 @@ button#ingredient-search:hover {
 }
 
 button#recipe-search {
-  background-image: url(Salad-header.jpg);
+  background-image: url(images/Salad-header.jpg);
 }
 
 
 button#ingredient-search {
-  background-image: url(Berry-header.jpg);
+  background-image: url(images/Berry-header.jpg);
 }
 
 
