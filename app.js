@@ -1,5 +1,5 @@
 var RecipeRequest_URL = 'https://food2fork-api-proxy.glitch.me/get';
-var SearchRequest_URL = 'https://food2fork-api-proxy.glitch.me/search';
+var SearchRequest_URL = 'https://ancient-reef-55040.herokuapp.com/search';
 
 //array to hold selected ingredients
 var selected = []; 
