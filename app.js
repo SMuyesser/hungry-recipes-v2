@@ -1,6 +1,21 @@
 var RecipeRequest_URL = 'https://ancient-reef-55040.herokuapp.com/get';
 var SearchRequest_URL = 'https://ancient-reef-55040.herokuapp.com/search';
 
+$('div#header').on('click', 'a#recipe-search-btn', function(event) {
+  $('div#recipe-search-container').removeClass('hidden');
+  clearResults();
+  $('form.js-search-form input.js-query').val('');
+  $('div#ingredient-search-container').addClass('hidden');
+  $('p#click-recImage-text').addClass('hidden');
+  $('div#recipe-search-buttons').addClass('hidden');
+});
+
+$('div#header').on('click', 'a#ingredient-search-btn', function(event) {
+  $('div#ingredient-search-container').removeClass('hidden');
+  clearResults();
+  $('div#recipe-search-container').addClass('hidden');
+});
+
 //array to hold selected ingredients
 var selected = []; 
 
@@ -180,6 +195,9 @@ function watchSubmit() {
     e.preventDefault();
     clearResults();
     var query = $(this).find('.js-query').val();
+    if (query.length < 1) {
+      return alert("You must enter a valid recipe.");
+    }
     $('div#initialLoadingProgress').removeClass('hidden');
     getSearchFromApi(query, displaySearchData);
   });
@@ -188,3 +206,29 @@ function watchSubmit() {
 $(function() {
     watchSubmit();
 });
+
+// Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+      }
+    }
+  });

@@ -4,7 +4,7 @@
 
 html {
   box-sizing: border-box;
-  background-color: #F0D6A4;
+  background-image: url(images/dark_wood.png);
 }
 
 .hidden {
@@ -15,7 +15,7 @@ div#initialLoadingProgress,
 div.moreLoadingProgress {
   text-align: center;
   font-size: 1.5em;
-  color: #510000;
+  color: white;
   font-weight: bolder;
   margin-bottom: 5px;
 }
@@ -35,160 +35,74 @@ a {
 
 
 /********************************************
-  HEADER
+  Landing
 ********************************************/
 
-div#header {
-  background-image: url(images/Header.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 200px;
-  margin-bottom: 0;
-  border-bottom: 2px solid #510000;
-  position: relative;
-  top: 0;
+div#landing-container {
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-#header h1,
-#header h3{
+div#header {
+  background-image: url(images/Food-Wallpapers.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 100px;
+  width: 100%;
+  height: 500px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+#header h1 {
   text-align: center;
   margin: 5px;
-  background-color: #940A0A;
-  width: 180px;
+  background-color: #981212;
   padding: 5px;
   color: white;
-  border: 1px solid white;
-  font-size: 3em;
+  border: 2px solid black;
+  font-size: 7em;
   font-family: 'Amatic SC', cursive;
+  width: 400px;
+  height: 130px;
+  position: absolute;
+  top: 25px;
+    text-shadow: 2px 2px 3px #414141;
+
 }
 
-#header a {
-  text-decoration: none;
+#header h1 img#logo {
+  height: 90px;
 }
 
-#header h1:hover {
-    background-color:   #510000;
-}
-
-#header h3 {
-  width: 220px;
-  font-size: 1.5em;
-}
-
-
-
-/********************************************
-  NAV
-********************************************/
-
-nav {
-  background: #940A0A; 
-  color: #F5B800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 25px;
-  margin-bottom: 45px;
-}
-
-nav ul {
-  padding-left: 0;
-}
-
-nav ul li{
-  display: inline-block;
-  font-size: .9em;
-}
-
-nav ul li button {
-  border: none;
-  background-color: #940A0A;
+#header p {
   color: white;
-  height: 25px;
-  font-family: 'Josefin Sans', sans-serif;
+  text-shadow: 2px 2px 3px #414141;
 }
 
-nav ul li button:hover {
-  background-color: #510000;
-}
-
-
-
-/********************************************
-  HOME SCREEN
-********************************************/
-
-div.home-container {
-  width: 90%;
-  margin: 20px auto;
-}
-
-div.home-container a {
-  text-decoration: none;
-}
-
-button#recipe-search,
-button#ingredient-search {
-  width: 100%;
-  height: 250px;
-  display: flex;
-  justify-content:  center;
-  clear: both;
-  margin-bottom: 15px;
-  font-size: 1em;
-  background-size:  cover;
-  color:  white;
-  padding: 0;
-  border:  3px solid #940A0A;
-}
-
-button#recipe-search span,
-button#ingredient-search span {
-  width: 100%;
-  height: 250px; 
-  background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
-}
-
-button#recipe-search span h3,
-button#ingredient-search span h3 {
-  box-sizing: border-box;
-  width:  100%;
-  margin-top: 0;
-  background-color:  #940A0A; 
-  padding: 5px;
-  text-align:   center;
-  font-size: 1.5em;
+#header p.home-button {
+  font-size: 2em;
+  background-color: #981212;
+  box-shadow: 0px 2px 3px #414141;
   font-family: 'Amatic SC', cursive;
-} 
-
-button#recipe-search span:hover,
-button#ingredient-search span:hover{
-  background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 0); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 0); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 0); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  
+  font-weight: bolder;
+  margin-bottom: 5px;
+  color: white;
+  padding-bottom: 1px;
+  border: 1px solid black;
+  width: 250px;
+  text-align: center;
 }
 
-button#recipe-search:hover,
-button#ingredient-search:hover {
-    border: none;
-}
-
-button#recipe-search {
-  background-image: url(images/Salad-header.jpg);
-}
-
-
-button#ingredient-search {
-  background-image: url(images/Berry-header.jpg);
+#header p.home-button:hover {
+  background-color: #D51B1B;
 }
 
 
@@ -199,40 +113,46 @@ button#ingredient-search {
 
 div#title-searchbar {
   text-align: center;
+  margin-top: 10px;
   margin-bottom: 20px;
-}
-
-#title-searchbar p {
-  font-size: 2em;
-  font-family: 'Amatic SC', cursive;
-  font-weight: bolder;
-  margin-bottom: 5px;
-  color: #510000;
+  height: 25px;
 }
 
 p#click-recImage-text,
 p#click-ingImage-text {
   font-size: 1.25em;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-bottom: 5px;
   text-align: center;
-  color: #510000;
+  color: #B6B6B6;
   font-family: 'Amatic SC', cursive;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
-#title-searchbar input {
-  width: 50%;
+#title-searchbar form input {
+  width: 250px;
+  height: 100%;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-left: 5px;
 }
 
 #title-searchbar button {
   background-color: #940A0A;
   color: white;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 2px 5px;
+  margin-top: 5px;
+  height: 100%;
 }
 
 .search-results h2 {
   font-family: 'Amatic SC', cursive;
-  color: #510000;
+  color: white;
   font-weight: bold;
 }
 
@@ -347,32 +267,30 @@ div#change-ingredients h3 {
 
 .search-results {
   text-align: center;
+  margin-top: 50px;
 }
 
 .search-result-item {
-  display: inline-block;
-  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 5px;
-  width: 90%;
-  text-align: center;
-  font-size: 1.25em;
-  background: linear-gradient(#510000 25%, #940A0A);
-  border: 2px solid black;
-  overflow: hidden;
 }
 
 .search-result-item h5 {
   color: white;
   width: 100%;
   margin: 5px;
-  margin-bottom: 10px;
-  font-size: 1em;
+  margin-bottom: 5px;
+  font-size: 1.5em;
+  font-weight: bold;
   text-align: center;
+  font-family: 'Amatic SC', cursive;
 }
 
 .search-result-item img {
   margin: 5px;
-  border: 3px solid white;
+  border: 3px solid #981212;
   width: 75%;
   height: 75%;
 }
@@ -394,9 +312,9 @@ div#change-ingredients {
 
 div#recipe-search-buttons {
   width:  100%;
-  text-align:  center;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 div#current-ingredients-section {
@@ -423,7 +341,11 @@ button#show-more-recipe-btn,
 button#back-to-top-btn {
   background-color: #940A0A;
   color: white;
-  padding: 5px;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 2px 5px;
 }
 
 button#confirm-ingredients {
