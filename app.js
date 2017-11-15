@@ -1,6 +1,7 @@
 var RecipeRequest_URL = 'https://ancient-reef-55040.herokuapp.com/get';
 var SearchRequest_URL = 'https://ancient-reef-55040.herokuapp.com/search';
 
+//show recipe search
 $('div#header').on('click', 'a#recipe-search-btn', function(event) {
   $('div#recipe-search-container').removeClass('hidden');
   clearResults();
@@ -10,6 +11,7 @@ $('div#header').on('click', 'a#recipe-search-btn', function(event) {
   $('div#recipe-search-buttons').addClass('hidden');
 });
 
+//show ingredient search
 $('div#header').on('click', 'a#ingredient-search-btn', function(event) {
   $('div#ingredient-search-container').removeClass('hidden');
   clearResults();
@@ -18,6 +20,11 @@ $('div#header').on('click', 'a#ingredient-search-btn', function(event) {
 
 //array to hold selected ingredients
 var selected = []; 
+
+$('div#ingredient-dropdown').on('click', 'button#add-ingredient-btn', function() {
+  var dropdownClone = $('select.ingredient-list').clone();
+  $('div.add-ingredient').append(dropdownClone);
+});
 
 //change button color and add ingredient to selected array on click, remove and change color back if clicked again
 $('div.ingredient-list').on('click', 'button', function(event) { 

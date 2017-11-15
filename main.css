@@ -183,80 +183,14 @@ div.ingredient-selector p {
   margin-bottom: 0;
 }
 
-div.ingredient-list {
+div#ingredient-dropdown {
   display: flex;
-  flex-direction: row;
-  margin: 0 auto 20px auto;
-  width: 90%;
-  height: 75px;
-  overflow-x: scroll;
-  text-align: center;
-  padding: 10px 0;
+  justify-content: center;
+
 }
 
-.ingredient-list button {
-  background-color: #940A0A;
-  display: inline;
-  text-align: center;
-  widows: auto;
-  padding: 3px;
-  margin-right: 5px;
-  border-radius: 10%;
-  border: 1px solid white;
-  color: white;
-  box-shadow: 2px 2px 3px black;
-  flex-shrink: 0;
-  font-family: 'Josefin Sans', sans-serif;
-}
-
-button.selected-button {
-  color: white;
-  background-color: #207E00;
-  border: 1px solid #2CAB00;
-}
-
-div#current-ingredients-section {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: white;
-}
-
-div#current-ingredients-section h2,
-div#change-ingredients h3 {
-  font-family: 'Amatic SC', cursive;
-  color: white;
-  font-weight: bolder;
-  font-size: 2em;
-  margin: 5px;
-}
-
-div#current-ingredients-section h2 {
-  text-decoration: underline;
-}
-
-div#current-ingredients p {
-  display: inline-block;
-}
-
-div#current-ingredients p::after {
-  content: ',' ;
-  margin-right: 5px;
-}
-
-div#current-ingredients p:last-child::after {
-  content: '';
-}
-
-div#change-ingredients h3 {
-  width: 100%;
-  color: #510000;
-  padding: 10px 5px;
-  margin: 20px auto;
-}
-
-#confirm-ingredients {
-  margin-top: 2px;
+select.ingredient-list {
+  margin-right: 10px;
 }
 
 
