@@ -38,20 +38,13 @@ a {
   Landing
 ********************************************/
 
-div#landing-container {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
 div#header {
   background-image: url(images/Food-Wallpapers.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 100px;
   width: 100%;
-  height: 500px;
+  height: 250px;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
   display: flex;
@@ -68,27 +61,27 @@ div#header {
   padding: 5px;
   color: white;
   border: 2px solid black;
-  font-size: 7em;
+  font-size: 3em;
   font-family: 'Amatic SC', cursive;
-  width: 400px;
-  height: 130px;
+  width: 160px;
+  height: 55px;
   position: absolute;
-  top: 25px;
-    text-shadow: 2px 2px 3px #414141;
-
+  top: 60px;
+  text-shadow: 2px 2px 3px #414141;
 }
 
 #header h1 img#logo {
-  height: 90px;
+  height: 35px;
 }
 
 #header p {
   color: white;
   text-shadow: 2px 2px 3px #414141;
+  font-size: .75em;
 }
 
 #header p.home-button {
-  font-size: 2em;
+  font-size: 1.5em;
   background-color: #981212;
   box-shadow: 0px 2px 3px #414141;
   font-family: 'Amatic SC', cursive;
@@ -97,7 +90,7 @@ div#header {
   color: white;
   padding-bottom: 1px;
   border: 1px solid black;
-  width: 250px;
+  width: 200px;
   text-align: center;
 }
 
@@ -114,7 +107,7 @@ div#header {
 div#title-searchbar {
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 75px;
   height: 25px;
 }
 
@@ -128,6 +121,11 @@ p#click-ingImage-text {
   font-family: 'Amatic SC', cursive;
   font-weight: bold;
 }
+
+p#click-recImage-text {
+  margin-bottom: 20px;
+}
+
 
 #title-searchbar form input {
   width: 250px;
@@ -158,13 +156,15 @@ p#click-ingImage-text {
 
 
 
+
+
 /********************************************
   INGREDIENT SEARCH
 ********************************************/
 
 div.ingredient-selector {
   text-align:   center;
-  margin-bottom: 50px;
+  margin-bottom: 5px;
 }
 
 div.ingredient-selector h2,
@@ -177,6 +177,7 @@ div.ingredient-selector p {
 div.ingredient-selector h2 {
   font-size: 2em;
   margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 div.ingredient-selector p {
@@ -188,17 +189,27 @@ div.ingredient-selector p {
 
 div#ingredient-dropdown {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 select.ingredient-list {
+  margin-bottom: 5px;
   margin-right: 10px;
   padding: 5px;
   max-height: 194.6px;
 }
 
-select.option-1::placeholder {
-  color: black;
+div#change-ingredients {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+div#change-ingredients h3 {
+  color: #B6B6B6;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
 }
 
 
@@ -209,6 +220,10 @@ select.option-1::placeholder {
 
 .search-results {
   text-align: center;
+  margin-top: 10px;
+}
+
+div#recipe-search-container div.search-results {
   margin-top: 50px;
 }
 
@@ -276,9 +291,21 @@ button#back-to-top-btn {
 }
 
 button#confirm-ingredients {
-  background-color: #207E00;
+  background-color: #940A0A;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  font-size: 1.5em;
   color: white;
   padding: 5px;
+  text-align: center;
+  margin-top: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+button#confirm-ingredients:hover {
+  cursor: pointer;
 }
 
 
@@ -290,6 +317,82 @@ button#confirm-ingredients {
 
 
 @media screen and (min-width: 768px) {
+
+  div#header {
+    background-image: url(images/Food-Wallpapers.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 100px;
+    width: 100%;
+    height: 500px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+
+  #header h1 {
+    text-align: center;
+    margin: 5px;
+    background-color: #981212;
+    padding: 5px;
+    color: white;
+    border: 2px solid black;
+    font-size: 7em;
+    font-family: 'Amatic SC', cursive;
+    width: 400px;
+    height: 130px;
+    position: absolute;
+    top: 25px;
+    text-shadow: 2px 2px 3px #414141;
+  }
+
+  #header h1 img#logo {
+    height: 90px;
+  }
+
+  #header p {
+    color: white;
+    text-shadow: 2px 2px 3px #414141;
+    font-size: 1em;
+  }
+
+  #header p.home-button {
+    font-size: 2em;
+    background-color: #981212;
+    box-shadow: 0px 2px 3px #414141;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    color: white;
+    padding-bottom: 1px;
+    border: 1px solid black;
+    width: 250px;
+    text-align: center;
+  }
+
+  #header p.home-button:hover {
+    background-color: #D51B1B;
+  }
+
+  div#title-searchbar {
+    margin-bottom: 20px;
+  }
+
+  div#ingredient-dropdown {
+    flex-direction: row;
+  }
+
+  select.ingredient-list {
+    margin-bottom: 5px;
+    margin-right: 10px;
+    padding: 5px;
+    max-height: 194.6px;
+  }
+
   div.search-result-item {
     width: 45%;
     margin: 5px;

@@ -52,8 +52,6 @@
         <img src="images/load-circle.gif" alt="loading circle">
       </div>
 
-      <p id='click-ingImage-text' class="hidden">Click an image below to see the recipe.</p>
-
       <div id="ingredient-selector" class='ingredient-selector'>
         <h2>Ingredient Selection</h2>
         <p>Select up to three</p>
@@ -218,6 +216,7 @@
             <option value="squash">Squash</option>
             <option value="steak">Steak</option>
             <option value="strawberry">Strawberry</option>
+            <option value="sugar">Sugar</option>
             <option value="sunflower">Sunflower</option>
             <option value="swiss cheese">Swiss Cheese</option>
             <option value="thyme">Thyme</option>
@@ -397,6 +396,7 @@
             <option value="squash">Squash</option>
             <option value="steak">Steak</option>
             <option value="strawberry">Strawberry</option>
+            <option value="sugar">Sugar</option>
             <option value="sunflower">Sunflower</option>
             <option value="swiss cheese">Swiss Cheese</option>
             <option value="thyme">Thyme</option>
@@ -576,6 +576,7 @@
             <option value="squash">Squash</option>
             <option value="steak">Steak</option>
             <option value="strawberry">Strawberry</option>
+            <option value="sugar">Sugar</option>
             <option value="sunflower">Sunflower</option>
             <option value="swiss cheese">Swiss Cheese</option>
             <option value="thyme">Thyme</option>
@@ -597,9 +598,12 @@
         </div>
       </div>
 
+      <button id="confirm-ingredients">Find Recipes</button>
+
+      <p id='click-ingImage-text' class="hidden">Click an image below to see the recipe.</p>
+
       <div class="js-search-results search-results"></div>
 
-      <a href="#header"><button id="confirm-ingredients">Find Recipes</button></a>
 
       <div id="change-ingredients" class="hidden">
         <div class="moreLoadingProgress hidden">
@@ -607,11 +611,10 @@
           <img src="images/load-circle.gif" alt="loading circle">
         </div>
         <button id="show-more-ingRecipe-btn">Show More Recipes</button>
-        <h3>If you didn't find the recipe you were looking for, try changing or reducing the selected ingredients.</h3>
+        <h3>If you didn't find the recipe you were looking for, try changing the selected ingredients.</h3>
         <a href="#ingredient-selector"><button id="change-ingredient-btn">Change Ingredients</button></a>
       </div>
 
-      <p id='click-ingImage-text' class="hidden">Click an image below to see the recipe.</p>
     </div>
     
     <div style="display:none">

@@ -14,15 +14,18 @@ $('div#header').on('click', 'a#recipe-search-btn', function(event) {
 //show ingredient search
 $('div#header').on('click', 'a#ingredient-search-btn', function(event) {
   $('div#ingredient-search-container').removeClass('hidden');
+  $('select.option-1').prop('selectedIndex', 0);
+  $('select.option-2').prop('selectedIndex', 0);
+  $('select.option-3').prop('selectedIndex', 0);
   clearResults();
   $('div#recipe-search-container').addClass('hidden');
+  $('p#click-ingImage-text').addClass('hidden');
+  $('div#change-ingredients').addClass('hidden');
 });
 
 //submit ingredient search button
 $('body').on('click', 'button#confirm-ingredients', function getSearchFromApi(event) {
   $('div#initialLoadingProgress').removeClass('hidden');
-  $('button#confirm-ingredients').addClass('hidden');
-  $('.ingredient-selector').addClass('hidden');
   var option1 = $('select.option-1').val();
   var option2 = $('select.option-2').val();
   var option3 = $('select.option-3').val();
@@ -61,9 +64,6 @@ $('body').on('click', 'button#change-ingredient-btn', function(event) {
   $('.ingredient-selector').removeClass('hidden');
   $('div#current-ingredients-section').removeClass('hidden');
   $('button#confirm-ingredients').removeClass('hidden');
-  $('div#change-ingredients').addClass('hidden');
-  $('p#click-ingImage-text').addClass('hidden');
-  clearResults();
 });
 
 //food2fork recipe search api
