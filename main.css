@@ -164,33 +164,41 @@ p#click-ingImage-text {
 
 div.ingredient-selector {
   text-align:   center;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
 }
 
 div.ingredient-selector h2,
 div.ingredient-selector p {
   font-family: 'Amatic SC', cursive;
-  color: #510000;
-  font-weight: bolder;
+  color: white;
+  font-weight: bold;
 }
 
 div.ingredient-selector h2 {
   font-size: 2em;
+  margin-bottom: 5px;
 }
 
 div.ingredient-selector p {
   font-size: 1.5em;
-  margin-bottom: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #B6B6B6;
 }
 
 div#ingredient-dropdown {
   display: flex;
   justify-content: center;
-
 }
 
 select.ingredient-list {
   margin-right: 10px;
+  padding: 5px;
+  max-height: 194.6px;
+}
+
+select.option-1::placeholder {
+  color: black;
 }
 
 
@@ -239,26 +247,11 @@ select.ingredient-list {
      BOTTOM BUTTONS FORMATTING
 ***********************************************/
 
-div#change-ingredients {
-  text-align: center;
-  margin-bottom: 150px;
-}
-
 div#recipe-search-buttons {
   width:  100%;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
-}
-
-div#current-ingredients-section {
-  text-align:   center;
-  margin: 0;
-  padding-bottom: 7px;
-  border-top: 3px solid black;
-  overflow-x: scroll;
-  z-index: 10;
-  background-color: #510000;
 }
 
 div#current-ingredients-section p {
