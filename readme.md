@@ -7,7 +7,7 @@ Regardless of which option you choose, you will find tons of recipes with pictur
 
 ## Screenshots
 
-   ![Homescreen](https://github.com/SMuyesser/Hungry-Recipes/blob/master/images/Home.png)
+   ![Homescreen](https://github.com/SMuyesser/hungry-recipes-v2/blob/master/images/Home.png)
    
    
 ## Built With
